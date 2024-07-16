@@ -1,0 +1,24 @@
+{
+  "name": "03-api-solid",
+  "version": "1.0.0",
+  "description": "Nesse projeto, vamos realizar o desenvolvimento de uma aplicação como o que conhecemos atualmente como Gympass. Nesse projeto, vamos trabalhar com padrões de projetos, testes automatizados e princípios da programação como SOLID, realizando desde o primeiro momento testes unitários e finalizandos com teste end-to-end.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/server.js",
+    "start:dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "tsup": "^8.1.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "zod": "^3.23.8"
+  }
+}
