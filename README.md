@@ -5,7 +5,7 @@ Nesse projeto, vamos realizar o desenvolvimento de uma aplicação como o que co
 ## RF (Requisitos funcionais)
 (Requisitos funcionais são requisitos que de certa forma determinam as funcionalidades da aplicação)
 
-- [ ] Deve ser possível se cadastrar;
+- [x] Deve ser possível se cadastrar;
 - [ ] Deve ser possível se autenticar;
 - [ ] Deve ser possível obter o perfil de um usuário logado;
 - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
@@ -19,7 +19,7 @@ Nesse projeto, vamos realizar o desenvolvimento de uma aplicação como o que co
 ## RN (Regras de negócio)
 (Regras de negócio de certa forma são as condições as quais um determinado requisito funcional deverá funcionar)
 
-- [ ] O usuário não deve poder se cadastrar com um e-mail duplicado;
+- [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [ ] O usuário não pode fazer 2 check-ins no mesmo dia;
 - [ ] O usuário não pode fazer check-in se não estiver perto (100m) da academia;
 - [ ] O check-in só pode ser validado até 20 minutos apís criado;
@@ -29,7 +29,7 @@ Nesse projeto, vamos realizar o desenvolvimento de uma aplicação como o que co
 ## RNFs (Requisitos não funcionais)
 (Requisitos não funcionais são requisitos que não parte do cliente)
 
-- [ ] A senha do usuário precisa estar criptografada;
+- [x] A senha do usuário precisa estar criptografada;
 - [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - [ ] Todas listas de dados precisam estar paginas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT (JSON WEB TOKEN );
