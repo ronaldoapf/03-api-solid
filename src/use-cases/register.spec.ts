@@ -8,12 +8,12 @@ import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 let usersRepository: UsersRepository
 let sut: RegisterUseCase
 
-beforeEach(() => {
-  usersRepository = new InMemoryUsersRepository()
-  sut = new RegisterUseCase(usersRepository)
-})
-
 describe('Register Use Case', () => {
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new RegisterUseCase(usersRepository)
+  })
+
   it('should hash user password upon registration', async () => {
     const { user } = await sut.execute({
       email: 'johndoe@example.com',

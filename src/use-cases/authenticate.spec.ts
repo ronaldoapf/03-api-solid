@@ -8,12 +8,12 @@ import { InvalidCredentialsError } from './errors/invalid-credentials-error'
 let usersRepository: UsersRepository
 let sut: AuthenticateUseCase
 
-beforeEach(() => {
-  usersRepository = new InMemoryUsersRepository()
-  sut = new AuthenticateUseCase(usersRepository)
-})
-
 describe('Authenticate Use Case', () => {
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new AuthenticateUseCase(usersRepository)
+  })
+
   it('should be able to authenticate', async () => {
     const password_hash = await hash('123456', 6)
 
