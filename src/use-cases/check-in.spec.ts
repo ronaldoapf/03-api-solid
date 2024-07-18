@@ -3,7 +3,8 @@ import { CheckInsRepository } from '@/repositories/check-ins-repository'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
-import { Decimal } from '@prisma/client/runtime/library'
+import { MaxDistanceError } from './errors/max-distance-error'
+import { MaxNumberOfCheckInsError } from './errors/max-number-of-check-ins-error'
 
 let checkInsRepository: CheckInsRepository
 let gymsRepository: InMemoryGymsRepository
@@ -15,13 +16,13 @@ describe('Check-in Use Case', () => {
     gymsRepository = new InMemoryGymsRepository()
     sut = new CheckInUseCase(checkInsRepository, gymsRepository)
 
-    gymsRepository.items.push({
+    await gymsRepository.create({
       id: 'gym-01',
       title: 'JavaScript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(-18.9384705),
-      longitude: new Decimal(-48.3090628),
+      latitude: -18.9384705,
+      longitude: -48.3090628,
     })
 
     vi.useFakeTimers()
@@ -62,7 +63,7 @@ describe('Check-in Use Case', () => {
           userLatitude: -18.9384705,
           userLongitude: -48.3090628,
         }),
-    ).rejects.toBeInstanceOf(Error)
+    ).rejects.toBeInstanceOf(MaxNumberOfCheckInsError)
   })
 
   it('should be able to check in twice but differente days', async () => {
@@ -89,14 +90,13 @@ describe('Check-in Use Case', () => {
 
   it('should not be able to check in on distant gym', async () => {
     vi.setSystemTime(new Date(2022, 0, 20, 8, 0, 0))
-
-    gymsRepository.items.push({
+    await gymsRepository.create({
       id: 'gym-02',
       title: 'D"Mulher Studio Fitness',
       description: '',
       phone: '',
-      latitude: new Decimal(-18.9230654),
-      longitude: new Decimal(-48.2939209),
+      latitude: -18.9230654,
+      longitude: -48.2939209,
     })
 
     await expect(() =>
@@ -106,6 +106,6 @@ describe('Check-in Use Case', () => {
         userLatitude: -18.8724951,
         userLongitude: -48.2786787,
       }),
-    ).rejects.toBeInstanceOf(Error)
+    ).rejects.toBeInstanceOf(MaxDistanceError)
   })
 })
