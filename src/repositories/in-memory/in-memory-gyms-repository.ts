@@ -45,14 +45,13 @@ export class InMemoryGymsRepository implements GymsRepository {
       const distance = getDistanceBetweenCoordinates(
         {
           latitude: params.latitude,
-          longitude: params.longititude,
+          longitude: params.longitude,
         },
         {
           latitude: item.latitude.toNumber(),
           longitude: item.longitude.toNumber(),
         },
       )
-      console.log(distance)
       return distance < 10
     })
   }
