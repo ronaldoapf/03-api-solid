@@ -23,16 +23,16 @@ Nesse projeto, vamos realizar o desenvolvimento de uma aplicação como o que co
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia;
 - [x] O usuário não pode fazer check-in se não estiver perto (100m) da academia;
 - [x] O check-in só pode ser validado até 20 minutos após criado;
-- [ ] O check-in só pode ser validado por administradores;
-- [ ] A academia só pode ser cadastrar por administradores;
+- [x] O check-in só pode ser validado por administradores;
+- [x] A academia só pode ser cadastrar por administradores;
 
 ## RNFs (Requisitos não funcionais)
 (Requisitos não funcionais são requisitos que não parte do cliente)
 
 - [x] A senha do usuário precisa estar criptografada;
 - [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
-- [ ] Todas listas de dados precisam estar paginas com 20 itens por página;
-- [ ] O usuário deve ser identificado por um JWT (JSON WEB TOKEN );
+- [x] Todas listas de dados precisam estar paginas com 20 itens por página;
+- [x] O usuário deve ser identificado por um JWT (JSON WEB TOKEN);
 
 
 
