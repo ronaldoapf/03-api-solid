@@ -15,7 +15,4 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - **[Node.js](https://nodejs.org/)** - Ambiente de execução JavaScript
 - **[TypeScript](https://www.typescriptlang.org/)** - Superset JavaScript com tipagem estática
 - **[Fastify](https://www.fastify.io/)** - Framework web rápido e eficiente
-<!-- - **[Knex.js](http://knexjs.org/)** - Query builder SQL -->
-<!-- - **[SQLite](https://www.sqlite.org/)** - Banco de dados relacional -->
 - **[TSX](https://github.com/esbuild-kit/tsx)** - Executor TypeScript para Node.js
-<!-- - **[ESLint](https://eslint.org/)** - Linter para padronização de código -->
